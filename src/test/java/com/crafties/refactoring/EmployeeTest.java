@@ -12,7 +12,7 @@ public class EmployeeTest {
     @Test
     public void should_get_base_salary_when_worker() {
         // given
-        Employee worker = new Employee(EmployeeType.WORKER, new BigDecimal(1500), BigDecimal.ZERO);
+        Employee worker = new Worker(new BigDecimal(1500));
 
         // when
         BigDecimal salary = worker.computeSalary();
@@ -24,7 +24,7 @@ public class EmployeeTest {
     @Test
     public void should_get_base_salary_plus_bonus_when_salesman() {
         // given
-        Employee salesman = new Employee(EmployeeType.SALESMAN, new BigDecimal(1500), new BigDecimal(1000));
+        Employee salesman = new Salesman(new BigDecimal(1500), new BigDecimal(1000));
 
         // when
         BigDecimal salary = salesman.computeSalary();
@@ -36,7 +36,7 @@ public class EmployeeTest {
     @Test
     public void should_get_base_salary_plus_10_percent_when_manager() {
         // given
-        Employee manager = new Employee(EmployeeType.MANAGER, new BigDecimal(1500), BigDecimal.ZERO);
+        Employee manager = new Manager(new BigDecimal(1500));
 
         // when
         BigDecimal salary = manager.computeSalary();
